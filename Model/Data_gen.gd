@@ -4,7 +4,7 @@ Version=1
 
 [Preferences]
 Username=
-Password=2078
+Password=2834
 Database=
 DateFormat=
 CommitCount=0
@@ -13,7 +13,7 @@ InitScript=
 
 [Table]
 Owner=SYSTEM
-Name=POLICIES
+Name=POLICY
 Count=32
 
 [Record]
@@ -102,14 +102,14 @@ Master=
 Name=DANGER_INDICATOR
 Type=FLOAT
 Size=22
-Data=Random(0, 9) + '.' + Random(0, 99)
+Data=Random(0, 10) + '.' + Random(0, 99)
 Master=
 
 
 [Table]
 Owner=SYSTEM
 Name=CUSTOMER
-Count=100..200
+Count=10..20
 
 [Record]
 Name=CUSTOMER_ID
@@ -170,14 +170,14 @@ Master=
 
 [Table]
 Owner=SYSTEM
-Name=CUSTOMERS_POLICIES
-Count=800..1000
+Name=CUSTOMERS_POLICY
+Count=1000..2000
 
 [Record]
 Name=START_DATE
 Type=DATE
 Size=
-Data=Random(01/01/1930, 01/01/1990)
+Data=Random(01/01/1980, 01/01/2010)
 Master=
 
 [Record]
@@ -190,8 +190,8 @@ Master=
 [Record]
 Name=POLICY_ID
 Type=NUMBER
-Size=39
-Data=list(select policy_id from policies)
+Size=38
+Data=list(select policy_id from policy)
 Master=
 
 [Record]
@@ -205,27 +205,27 @@ Master=
 Name=BONUS
 Type=FLOAT
 Size=22
-Data=Random(0, 9) + ['.']  + Random(00, 99)
+Data=Random(0, 10) + '.' + Random(0, 99)
 Master=
 
 [Record]
 Name=DETAILS
-Type=CLOB
+Type=LONG
 Size=
-Data=Text(100, 10, 3)
+Data=Random(0, 10)
 Master=
 
 [Record]
-Name=CUSTOMERS_POLICYS_ID
+Name=CUSTOMERS_POLICY_ID
 Type=NUMBER
 Size=38
-Data=Sequence(1, [1], [1000])
+Data=Sequence(1, [1], 2000)
 Master=
 
 
 [Table]
 Owner=SYSTEM
-Name=CLAIMS
+Name=CLAIM
 Count=10..20
 
 [Record]
@@ -233,6 +233,13 @@ Name=CLAIM_ID
 Type=NUMBER
 Size=38
 Data=Sequence(1, [1], [200])
+Master=
+
+[Record]
+Name=CUSTOMERS_POLICY_ID
+Type=NUMBER
+Size=38
+Data=list(select customers_policy_id from customers_policy)
 Master=
 
 [Record]
@@ -267,7 +274,7 @@ Master=
 Name=RESULT
 Type=CLOB
 Size=
-Data=Text(100, 10, 3)
+Data=Random(0, 10)
 Master=
 
 [Record]
@@ -275,12 +282,5 @@ Name=SETTLEMENT_DATE
 Type=DATE
 Size=
 Data=Random(01/01/1980, 01/01/2010)
-Master=
-
-[Record]
-Name=CUSTOMERS_POLICYS_ID
-Type=NUMBER
-Size=38
-Data=list(select customers_policys_id from customers_policies)
 Master=
 
