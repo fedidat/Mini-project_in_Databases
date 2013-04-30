@@ -4,7 +4,7 @@ Version=1
 
 [Preferences]
 Username=
-Password=2834
+Password=2608
 Database=
 DateFormat=
 CommitCount=0
@@ -210,9 +210,9 @@ Master=
 
 [Record]
 Name=DETAILS
-Type=LONG
+Type=CLOB
 Size=
-Data=Random(0, 10)
+Data=Text(100, 10, 3)
 Master=
 
 [Record]
@@ -274,7 +274,7 @@ Master=
 Name=RESULT
 Type=CLOB
 Size=
-Data=Random(0, 10)
+Data=Text(100, 10, 3)
 Master=
 
 [Record]
