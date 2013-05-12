@@ -5,8 +5,9 @@ Use Eliezer's book: PL/SQL for Dummies, PL/SQL dev manual
 in pl-sql for dummies around  page 43 (italics mean placeholder):
 	<<MAIN>>
 	>declare
-	>>v-[name]-[type] [type] ["DEFAULT" value]
-							 [:- assignment] 
+	>>v-[name]-[type] [type] ["DEFAULT" value] [:- assignment] 
+	>>cursor c_[name] is
+	>>>>[SQL query]
 	>begin
 	>>
 	>end
@@ -17,4 +18,7 @@ open SQL command, DONT FORGET "set serveroutput on", then type the program
 in the editor, then paste it to the command prompt, then enter slash, which
 will make it compile, run and output.
 
-etc etc, just read that Dummies book
+etc etc, just read that Dummies book, chapters 3, 4 **6**
+
+Level 3 reqs:
+two programs, each with at least one local var and 2+ SQL queries, one cursor overall, with whiles/ifs (histaafuyot)
