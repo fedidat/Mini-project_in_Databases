@@ -1,0 +1,97 @@
+PL/SQL Developer Report
+
+[SQL]
+select * from customer
+where (sysdate - birth_date) / 365 > &<name="Minimum age" hint="Only customers older than this age will be shown" type="integer" ifempty="0">
+and (sysdate - birth_date) / 365 < &<name="Maximum age" hint="Only customers younger than this age will be shown" type="integer" ifempty="200">
+and last_name like &<name="Last name" hint="Enter the customers' last name" type="string" ifempty="%">
+and (gender = &<name="Gender" hint="Select the customers' gender" list = "0, male, 1, female" description="yes" ifempty="0 or gender = 1">)
+
+[Options]
+Connect=False
+Username=
+Password=2884
+Database=
+ConnectAs=
+LockMode=0
+LockedPassword=2290
+BkgColor=-16777211
+BkgImage=
+FormLayout=False
+OnlyNBSP=False
+LeftMargin=0
+TopMargin=0
+PageBreak=0
+AddSQL=False
+HandleTags=True
+
+[Styles]
+
+{Title}
+Enabled=True
+Name=Report Title
+Description=Customers
+Style=
+HeaderStyle=
+Align=0
+Break=0
+Function=0
+Format=
+
+{Param}
+Enabled=True
+Name=Variables
+Description=
+Style=Default Variables
+HeaderStyle=
+Align=3
+Break=0
+Function=0
+Format=
+
+{Table}
+Enabled=False
+Name=Tabular Tables
+Description=
+Style=
+HeaderStyle=
+Align=0
+Break=0
+Function=0
+Format=
+
+{Form}
+Enabled=False
+Name=Form Tables
+Description=
+Style=
+HeaderStyle=
+Align=0
+Break=0
+Function=0
+Format=
+
+{Field}
+Enabled=False
+Name=Default Field
+Description=
+Style=
+HeaderStyle=
+Align=0
+Break=0
+Function=0
+Format=
+
+
+
+[CSS]
+Default Variables
+{
+  Background: #F0F0F0;
+  Color: #000000;
+  Border-style: None;
+  Font-size: 8pt;
+  Font-weight: Bold;
+}
+
+
