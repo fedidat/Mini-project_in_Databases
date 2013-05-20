@@ -5,11 +5,10 @@ Use Eliezer's book: PL/SQL for Dummies, PL/SQL dev manual
 in pl-sql for dummies around  page 43 (italics mean placeholder):
 	<<MAIN>>
 	>declare
-	>>v-[name]-[type] [type] ["DEFAULT" value] [:- assignment] 
-	>>cursor c_[name] is
-	>>>>[SQL query]
+	>>v-[name]-[type] [type] ["DEFAULT" value] [:- assignment] ;
+	>>cursor c_[name] is [SQL query];
 	>begin
-	>>
+	>>DBMS_OUTPUT.out_line('string is' || [STRING]);
 	>end
 	
 string: with single quotes 'Hello' / ''
@@ -22,3 +21,4 @@ etc etc, just read that Dummies book, chapters 3, 4 **6**
 
 Level 3 reqs:
 two programs, each with at least one local var and 2+ SQL queries, one cursor overall, with whiles/ifs (histaafuyot)
+Start from Dummies example 6-5, and read substitution variables in Manual
