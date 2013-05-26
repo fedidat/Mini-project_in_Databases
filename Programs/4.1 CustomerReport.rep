@@ -2,19 +2,23 @@ PL/SQL Developer Report
 
 [SQL]
 select * from customer
+--Only print records of customers older than this age
 where (sysdate - birth_date) / 365 > &<name="Minimum age" hint="Only customers older than this age will be shown" type="integer" ifempty="0">
+--Only print records of customers younger than this age
 and (sysdate - birth_date) / 365 < &<name="Maximum age" hint="Only customers younger than this age will be shown" type="integer" ifempty="200">
+--Only print records of customers with this exact same name
 and last_name like &<name="Last name" hint="Enter the customers' last name" type="string" ifempty="%">
-and (gender = &<name="Gender" hint="Select the customers' gender" list = "0, male, 1, female" description="yes" ifempty="0 or gender = 1">)
+--Only print records of customers with these specific genders
+and gender in (&<name="Gender" hint="Select the customers' gender" list = "0, male, 1, female" description="yes" multiselect="yes" ifempty="0 ,1">)
 
 [Options]
 Connect=False
 Username=
-Password=2884
+Password=2825
 Database=
 ConnectAs=
 LockMode=0
-LockedPassword=2290
+LockedPassword=2972
 BkgColor=-16777211
 BkgImage=
 FormLayout=False

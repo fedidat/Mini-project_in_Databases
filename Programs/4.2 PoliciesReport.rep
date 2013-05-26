@@ -3,19 +3,22 @@ PL/SQL Developer Report
 [SQL]
 select policy_id, customer_id, start_date, end_date, price*(1-0.05*bonus) as price, property_code, age_of_property, property_value
 from customers_policy natural join policy natural join property
+--Only print records starting after this date
 where start_date > &<name="Starting after" hint="Only policies that started after this date will be shown" type="date" ifempty="01/01/1900">
+--Only print records starting before this date
 and age_of_property >= &<name="Minimum age" hint="Only policies for properties older than this number (in years) will be shown" type="integer" ifempty="0">
-and property_code = &<name="Property code" hint="Select the property code" list = "1, apartment, 2, house, 3, luxury house, 4, building, 5, other" description="yes" ifempty="*">
+--Only print records with these specific property codes
+and property_code in (&<name="Property code" hint="Select the property code" list = "1, apartment, 2, house, 3, luxury house, 4, building, 5, other" description="yes" multiselect="yes" ifempty="1, 2, 3, 4, 5">)
 order by policy_id asc, customer_id asc
 
 [Options]
 Connect=False
 Username=
-Password=2679
+Password=2005
 Database=
 ConnectAs=
 LockMode=0
-LockedPassword=2563
+LockedPassword=2960
 BkgColor=-16777211
 BkgImage=
 FormLayout=False
