@@ -1,0 +1,60 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="InsuranceSite.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            text-align: left;
+            width: 460px;
+            height: 108px;
+        }
+    </style>
+</head>
+<body>
+    <form runat="server">
+    <div class="page">
+        <div class="header">
+            <div class="title">
+                <h1>&nbsp;</h1>
+            </div>
+            <div class="loginDisplay">
+                <img alt="logo" class="style1" src="Logo.png" />&nbsp;</div>
+            <div class="clear hideSkiplink">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home"/>
+                        <asp:MenuItem NavigateUrl="~/Customers.aspx" Text="Customers" Value="Customers">
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/PropertyPolicies.aspx" Text="Property policies" 
+                            Value="Property policies"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/LifePolicies.aspx" Text="Life policies" 
+                            Value="Life policies"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/CustomersPolicies.aspx" Text="Customers' policies" 
+                            Value="Customers' policies"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Claims.aspx" Text="Claims" Value="Claims">
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Procfunc.aspx" Text="Procedures / functions" 
+                            Value="Procedures / functions"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/>
+                    </Items>
+                </asp:Menu>
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+        
+    </div>
+    </form>
+</body>
+</html>
