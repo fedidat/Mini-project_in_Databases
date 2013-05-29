@@ -13,6 +13,15 @@ namespace InsuranceSite {
     public partial class Procfunc {
         
         /// <summary>
+        /// funcPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel funcPanel;
+        
+        /// <summary>
         /// ddl_customerID control.
         /// </summary>
         /// <remarks>
@@ -65,6 +74,15 @@ namespace InsuranceSite {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_result;
+        
+        /// <summary>
+        /// ProcPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel ProcPanel;
         
         /// <summary>
         /// ddl_propertyID control.

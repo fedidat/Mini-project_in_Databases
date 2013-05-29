@@ -78,7 +78,6 @@ namespace InsuranceSite
             myOleDbCommand.CommandType = CommandType.Text;
             myOleDbConnection.Open();
             txt_oldPrice.Text = myOleDbCommand.ExecuteScalar().ToString();
-            myOleDbConnection.Close();
             
             myOleDbCommand.CommandText = "p_updatePropertyPrice";
             myOleDbCommand.CommandType = CommandType.StoredProcedure;
@@ -94,8 +93,7 @@ namespace InsuranceSite
             myOleDbCommand.Parameters.Add(par2);
             try
             {
-                myOleDbConnection.Open();
-                myOleDbCommand.ExecuteReader();
+                myOleDbDataReader = myOleDbCommand.ExecuteReader();
                 myOleDbDataReader.Close();
             }
             catch (Exception ex)
@@ -105,9 +103,7 @@ namespace InsuranceSite
 
             myOleDbCommand.CommandText = "select price from policy where policy_id = " + ddl_propertyID.Text;
             myOleDbCommand.CommandType = CommandType.Text;
-            myOleDbConnection.Open();
             txt_newPrice.Text = myOleDbCommand.ExecuteScalar().ToString();
-            myOleDbConnection.Close();
         }
     }
 }

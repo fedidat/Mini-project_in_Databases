@@ -1,10 +1,17 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Procfunc.aspx.cs" Inherits="InsuranceSite.Procfunc" %>
 <asp:Content ID="mainContent" ContentPlaceHolderID="MainContent" runat="server">
+    <script type="text/javascript">
+        function validateDate() {
+            if ('<%= cal_payDate.SelectedDate==DateTime.MinValue  %>' == "True")
+                alert('Please select a date.');
+        }
+    </script>
     <fieldset>
         <legend>Function sumForCustomer</legend>
         <p>
             This function returns the sum of the prices of a given customer's insurances at a given date.
         </p>
+        <asp:Panel ID="funcPanel" runat="server" DefaultButton="submit_Customer">
         <table class="repeaterTable">
             <tr>
                 <td>Customer ID: </td>
@@ -50,7 +57,7 @@
             <td>Submit:</td>
             <td>
                 <asp:Button ID="submit_Customer" runat="server" Text="Submit" 
-                    onclick="callSumForCustomer" />
+                    OnClientClick="javascript:validateDate();" onclick="callSumForCustomer" />
             </td>
             </tr>
             <tr>
@@ -60,6 +67,7 @@
             </td>
             </tr>
         </table>
+        </asp:Panel>
     </fieldset>
 
     
@@ -68,6 +76,7 @@
         <p>
             This procedure updates the price of a given property policy according to a given base price, using a formula adjusting to the policy's data (property code, age of property and property value).
         </p>
+        <asp:Panel ID="ProcPanel" runat="server" DefaultButton="submit_Property">
         <table class="repeaterTable">
             <tr>
                 <td>Property policy ID: </td>
@@ -109,5 +118,6 @@
             </td>
             </tr>
         </table>
+        </asp:Panel>
     </fieldset>
 </asp:Content>
