@@ -48,7 +48,7 @@
         AutoGenerateInsertButton="True" CellPadding="4" ForeColor="#333333" 
         GridLines="None" Height="50px" Width="100%" 
         DataSourceID="GridviewSelectedRow" 
-        DataKeyNames="CUSTOMER_ID" >
+        DataKeyNames="CUSTOMER_ID" oniteminserting="oninsert" >
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <CommandRowStyle BackColor="#E2DED6" Font-Bold="True" />
         <EditRowStyle BackColor="#999999" />

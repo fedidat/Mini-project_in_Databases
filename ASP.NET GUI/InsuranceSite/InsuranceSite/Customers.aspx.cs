@@ -11,6 +11,17 @@ namespace InsuranceSite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (rowindex > -1)
+            {
+                tableGridView.EditIndex = rowindex;
+                rowindex = -1;
+            }
+        }
+
+        protected void oninsert(object sender, DetailsViewInsertEventArgs e)
+        {
+            GridViewRow editItem = (GridViewRow)e.Values[0];
+            rowindex = editItem.RowIndex;
         }
 
         protected void updateOraInsurance(object sender, SqlDataSourceStatusEventArgs e)
@@ -22,5 +33,12 @@ namespace InsuranceSite
         {
             tableGridView.SelectedIndex = 0;
         }
+
+
+        int rowindex = -1;
+
+
+
+
     }
 }
